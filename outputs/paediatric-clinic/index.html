@@ -1,0 +1,1008 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6554cf" />
+    <title>Paediatric Clinic | Bavdhan</title>
+    <meta name="description" content="Paediatric and newborn care in Bavdhan, Pune." />
+    <link rel="icon" href="assets/favicon.svg?v=20261004" type="image/svg+xml" />
+    <link rel="shortcut icon" href="assets/favicon.svg?v=20261004" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="palette.css" />
+    <link rel="stylesheet" href="sections.css" />
+    <link rel="stylesheet" href="doctor-photo.css" />
+    <link rel="stylesheet" href="clinic-title.css" />
+    <link rel="stylesheet" href="bee.css" />
+    <link rel="stylesheet" href="social.css" />
+    <link rel="stylesheet" href="gallery-carousel.css" />
+    <link rel="stylesheet" href="gallery-spotlight.css" />
+    <link rel="stylesheet" href="photo-lightbox.css" />
+    <style>
+      .brand { font-size: 19px; }
+      .brand .clinic-name { display: grid; gap: 14px; }
+      .credentials .experience-line { display: block; }
+      .site-header .brand .clinic-name small { grid-column: auto; margin: 0; font-size: 12px; letter-spacing: 1.8px; }
+      .site-header .brand { max-width: 100%; font-family: "DM Sans", Arial, sans-serif; font-size: clamp(13px, 2.45vw, 29px); font-weight: 800; line-height: 1.16; letter-spacing: -.35px; text-shadow: 0 2px 10px rgba(40, 29, 94, .26); }
+      .site-header .brand .clinic-name { white-space: nowrap; }
+      .header-social { display: flex; align-items: center; justify-content: flex-end; gap: 9px; margin-left: 18px; }
+      .header-social a { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.42); border-radius: 50%; color: #fff; background: rgba(255,255,255,.12); transition: transform .2s ease, background .2s ease; }
+      .header-social a:hover, .header-social a:focus-visible { background: rgba(255,255,255,.25); transform: translateY(-2px); outline: 2px solid #ffdb66; outline-offset: 3px; }
+      .header-social svg { width: 17px; height: 17px; fill: currentColor; }
+      .header-social .google-link svg path { fill: currentColor !important; }
+      .header-social a[aria-label="WhatsApp Channel"] svg,
+      .side-menu-social-links a[aria-label="WhatsApp Channel"] svg { display: none; }
+      .header-social a[aria-label="WhatsApp Channel"]::before,
+      .side-menu-social-links a[aria-label="WhatsApp Channel"]::before { content: ""; display: block; width: 18px; height: 18px; background: currentColor; -webkit-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE3LjQ3MiAxNC4zODJjLS4yOTctLjE0OS0xLjc1OC0uODY3LTIuMDMtLjk2Ny0uMjczLS4wOTktLjQ3Mi0uMTQ4LS42Ny4xNDktLjE5OC4yOTctLjc2Ny45NjctLjk0IDEuMTY1LS4xNzMuMTk4LS4zNDcuMjIzLS42NDQuMDc0LS4yOTctLjE0OS0xLjI1NS0uNDYzLTIuMzktMS40NzctLjg4My0uNzg4LTEuNDgtMS43NjEtMS42NTMtMi4wNTgtLjE3My0uMjk3LS4wMTgtLjQ1OC4xMy0uNjA2LjEzNC0uMTMzLjI5Ny0uMzQ3LjQ0Ni0uNTIuMTQ4LS4xNzQuMTk4LS4yOTguMjk3LS40OTYuMDk5LS4xOTguMDUtLjM3Mi0uMDI1LS41Mi0uMDc0LS4xNDgtLjY2OS0xLjYxMS0uOTE2LTIuMjA2LS4yNDItLjU3OS0uNDg3LS41LS42NjktLjUwOS0uMTczLS4wMDktLjM3Mi0uMDExLS41Ny0uMDExLS4xOTggMC0uNTIuMDc0LS43OTIuMzcyLS4yNzIuMjk3LTEuMDQgMS4wMTYtMS4wNCAyLjQ3OXMxLjA2NCAyLjg3NSAxLjIxMyAzLjA3NGMuMTQ4LjE5OCAyLjA5NSAzLjIgNS4wNzYgNC40OS43MS4zMDYgMS4yNjMuNDg5IDEuNjk0LjYyNi43MTIuMjI3IDEuMzYuMTk1IDEuODcyLjExOC41NzEtLjA4NSAxLjc1OC0uNzE5IDIuMDA2LTEuNDEzLjI0OC0uNjk0LjI0OC0xLjI4OS4xNzMtMS40MTMtLjA3NC0uMTI0LS4yNzItLjE5OC0uNTctLjM0N3ptLTUuNDIxIDcuNDAzaC0uMDA0YTguMjEgOC4yMSAwIDAxLTQuMTg4LTEuMTQ4bC0uMy0uMTc4LTMuMTA1LjgxNC44MjktMy4wMjUtLjE5Ni0uMzFhOC4yMDMgOC4yMDMgMCAwMS0xLjI1OS00LjM4MmMuMDAxLTQuNTIzIDMuNjg3LTguMjA1IDguMjE0LTguMjA1YTguMjE0IDguMjE0IDAgMDE1LjgwNyAyLjQwMyA4LjE1OCA4LjE1OCAwIDAxMi40MDUgNS44MDVjLS4wMDIgNC41MjMtMy42ODggOC4yMDUtOC4yMTMgOC4yMDV6bTYuOTc0LTE1LjE4QTkuNzggOS43OCAwIDAwMTIuMDUgMy43Yy01LjQzNSAwLTkuODYgNC40MjQtOS44NjIgOS44NiAwIDEuNzM4LjQ1NCAzLjQzNSAxLjMxNyA0LjkzTDIuMTA3IDIzLjZsNS4yMy0xLjM3MmE5Ljg2OCA5Ljg2OCAwIDAwNC43MSAxLjJoLjAwNGM1LjQzNSAwIDkuODYtNC40MjQgOS44NjItOS44NmE5Ljc4IDkuNzggMCAwMC0yLjg4Ny02Ljk2M3oiLz48L3N2Zz4=") center / contain no-repeat; mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE3LjQ3MiAxNC4zODJjLS4yOTctLjE0OS0xLjc1OC0uODY3LTIuMDMtLjk2Ny0uMjczLS4wOTktLjQ3Mi0uMTQ4LS42Ny4xNDktLjE5OC4yOTctLjc2Ny45NjctLjk0IDEuMTY1LS4xNzMuMTk4LS4zNDcuMjIzLS42NDQuMDc0LS4yOTctLjE0OS0xLjI1NS0uNDYzLTIuMzktMS40NzctLjg4My0uNzg4LTEuNDgtMS43NjEtMS42NTMtMi4wNTgtLjE3My0uMjk3LS4wMTgtLjQ1OC4xMy0uNjA2LjEzNC0uMTMzLjI5Ny0uMzQ3LjQ0Ni0uNTIuMTQ4LS4xNzQuMTk4LS4yOTguMjk3LS40OTYuMDk5LS4xOTguMDUtLjM3Mi0uMDI1LS41Mi0uMDc0LS4xNDgtLjY2OS0xLjYxMS0uOTE2LTIuMjA2LS4yNDItLjU3OS0uNDg3LS41LS42NjktLjUwOS0uMTczLS4wMDktLjM3Mi0uMDExLS41Ny0uMDExLS4xOTggMC0uNTIuMDc0LS43OTIuMzcyLS4yNzIuMjk3LTEuMDQgMS4wMTYtMS4wNCAyLjQ3OXMxLjA2NCAyLjg3NSAxLjIxMyAzLjA3NGMuMTQ4LjE5OCAyLjA5NSAzLjIgNS4wNzYgNC40OS43MS4zMDYgMS4yNjMuNDg5IDEuNjk0LjYyNi43MTIuMjI3IDEuMzYuMTk1IDEuODcyLjExOC41NzEtLjA4NSAxLjc1OC0uNzE5IDIuMDA2LTEuNDEzLjI0OC0uNjk0LjI0OC0xLjI4OS4xNzMtMS40MTMtLjA3NC0uMTI0LS4yNzItLjE5OC0uNTctLjM0N3ptLTUuNDIxIDcuNDAzaC0uMDA0YTguMjEgOC4yMSAwIDAxLTQuMTg4LTEuMTQ4bC0uMy0uMTc4LTMuMTA1LjgxNC44MjktMy4wMjUtLjE5Ni0uMzFhOC4yMDMgOC4yMDMgMCAwMS0xLjI1OS00LjM4MmMuMDAxLTQuNTIzIDMuNjg3LTguMjA1IDguMjE0LTguMjA1YTguMjE0IDguMjE0IDAgMDE1LjgwNyAyLjQwMyA4LjE1OCA4LjE1OCAwIDAxMi40MDUgNS44MDVjLS4wMDIgNC41MjMtMy42ODggOC4yMDUtOC4yMTMgOC4yMDV6bTYuOTc0LTE1LjE4QTkuNzggOS43OCAwIDAwMTIuMDUgMy43Yy01LjQzNSAwLTkuODYgNC40MjQtOS44NjIgOS44NiAwIDEuNzM4LjQ1NCAzLjQzNSAxLjMxNyA0LjkzTDIuMTA3IDIzLjZsNS4yMy0xLjM3MmE5Ljg2OCA5Ljg2OCAwIDAwNC43MSAxLjJoLjAwNGM1LjQzNSAwIDkuODYtNC40MjQgOS44NjItOS44NmE5Ljc4IDkuNzggMCAwMC0yLjg4Ny02Ljk2M3oiLz48L3N2Zz4=") center / contain no-repeat; }
+      .menu-toggle { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; width: 34px; height: 34px; margin-left: 9px; padding: 0; border: 1px solid rgba(255,255,255,.42); border-radius: 50%; color: #fff; background: rgba(255,255,255,.12); cursor: pointer; transition: transform .2s ease, background .2s ease; }
+      .menu-toggle:hover, .menu-toggle:focus-visible { background: rgba(255,255,255,.25); transform: translateY(-2px); outline: 2px solid #ffdb66; outline-offset: 3px; }
+      .menu-toggle span, .menu-toggle::before, .menu-toggle::after { display: block; width: 18px; height: 2px; flex: 0 0 2px; border-radius: 2px; background: currentColor; content: ""; }
+      .side-menu-overlay { position: fixed; z-index: 110; inset: 0; border: 0; background: rgba(35,28,70,.44); opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+      .side-menu { position: fixed; z-index: 111; top: 0; right: 0; width: min(360px, calc(100vw - 28px)); height: 100dvh; padding: 27px 25px; overflow-y: auto; color: #40365f; background: #fffdf8; box-shadow: -18px 0 48px rgba(35,28,70,.2); transform: translateX(105%); transition: transform .3s cubic-bezier(.2,.75,.25,1); }
+      .side-menu-social { margin-top: 24px; padding-top: 20px; border-top: 1px solid #e8e3fb; }
+      .side-menu-social p { margin: 0 0 11px; color: #7563d7; font-size: 11px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; }
+      .side-menu-social-links { display: flex; gap: 9px; }
+      .side-menu-social-links a { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; color: #fff; background: #7563d7; }
+      .side-menu-social-links a:hover, .side-menu-social-links a:focus-visible { color: #453866; background: #ffdb66; outline: 2px solid #7563d7; outline-offset: 3px; }
+      .side-menu-social-links svg { width: 17px; height: 17px; fill: currentColor; }
+      .event-popup { position: fixed; z-index: 140; inset: 0; display: grid; place-items: center; padding: 24px; background: rgba(35,28,70,.5); opacity: 0; visibility: hidden; transition: opacity .24s ease, visibility .24s ease; }
+      .event-popup.is-visible { opacity: 1; visibility: visible; }
+      .event-popup-card { position: relative; width: min(100%, 370px); overflow: hidden; padding: 36px 28px 29px; color: #453866; background: #fffdf8; border: 2px solid #ffdb66; border-radius: 28px; box-shadow: 0 25px 65px rgba(27,20,71,.3); text-align: center; transform: translateY(14px) scale(.97); transition: transform .24s cubic-bezier(.2,.8,.25,1); }
+      .event-popup.is-visible .event-popup-card { transform: translateY(0) scale(1); }
+      .event-popup-card::before, .event-popup-card::after { position: absolute; color: #ffcc5c; font-size: 34px; content: "✦"; }
+      .event-popup-card::before { top: 15px; left: 20px; transform: rotate(-16deg); }
+      .event-popup-card::after { right: 19px; bottom: 15px; color: #a99ce9; transform: rotate(18deg); }
+      .event-popup-close { position: absolute; z-index: 1; top: 11px; right: 11px; display: grid; place-items: center; width: 31px; height: 31px; padding: 0; border: 0; border-radius: 50%; color: #594b98; background: #eeeaff; font-size: 21px; line-height: 1; cursor: pointer; }
+      .event-popup-close:hover, .event-popup-close:focus-visible { color: #fff; background: #6554cf; outline: 2px solid #ffdb66; outline-offset: 2px; }
+      .event-popup-icon { display: inline-grid; place-items: center; width: 65px; height: 65px; margin-bottom: 13px; border-radius: 22px 22px 22px 8px; background: #f0edff; font-size: 34px; transform: rotate(-7deg); }
+      .event-popup-kicker { margin: 0 0 8px; color: #7563d7; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; }
+      .event-popup h2 { position: relative; z-index: 1; margin: 0; font-family: "Fredoka", sans-serif; font-size: clamp(25px, 6vw, 32px); line-height: 1.08; letter-spacing: -.7px; }
+      .event-popup-button { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; min-height: 45px; margin-top: 22px; padding: 0 22px; border: 0; border-radius: 14px; color: #382f58; background: #ffdb66; box-shadow: 0 6px 0 rgba(105,77,185,.16); font-family: inherit; font-size: 14px; font-weight: 800; cursor: pointer; }
+      .event-popup-button:hover, .event-popup-button:focus-visible { transform: translateY(-1px); outline: 2px solid #6554cf; outline-offset: 3px; }
+      body.event-popup-open { overflow: hidden; }
+      .occasion-greeting { position: relative; isolation: isolate; display: inline-grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 11px; max-width: min(100%, 540px); margin: 0 0 30px; padding: 11px 19px 12px 11px; overflow: hidden; border: 1px solid rgba(255,255,255,.26); border-radius: 15px 24px 24px 15px; color: #fff; background: linear-gradient(112deg, #5a49b7 0%, #7563d7 52%, #8d7be5 100%); box-shadow: 0 11px 24px rgba(57,43,125,.22), inset 0 1px 0 rgba(255,255,255,.18); font-family: "Fredoka", sans-serif; font-size: 14px; font-weight: 500; line-height: 1.25; letter-spacing: .05px; text-align: left; animation: occasion-greeting-motion .65s cubic-bezier(.2,.8,.25,1) both; }
+      .occasion-greeting::before { position: absolute; z-index: -1; top: -25px; right: -10px; width: 100px; height: 100px; border: 16px solid rgba(255,219,102,.25); border-radius: 50%; content: ""; }
+      .occasion-greeting::after { position: absolute; z-index: -1; bottom: -43px; left: 35%; width: 110px; height: 78px; border-radius: 50%; background: rgba(255,255,255,.1); content: ""; }
+      .occasion-greeting[hidden] { display: none; }
+      .occasion-greeting span[aria-hidden="true"] { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.42); border-radius: 50% 50% 50% 10px; background: #ffdb66; box-shadow: 0 4px 10px rgba(49,35,122,.26); font-size: 18px; transform: rotate(-8deg); }
+      .occasion-greeting strong { display: block; margin-bottom: 2px; color: #fff; font-family: "Fredoka", sans-serif; font-size: 1.1em; font-weight: 700; line-height: 1.13; letter-spacing: .1px; text-shadow: 0 1px 1px rgba(51,37,114,.18); }
+      .occasion-greeting .occasion-message { display: block; color: rgba(255,255,255,.88); font-family: "DM Sans", sans-serif; font-size: .94em; font-weight: 600; line-height: 1.28; }
+      @keyframes occasion-greeting-motion { from { opacity: 0; transform: translateY(-10px) scale(.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+      @media (prefers-reduced-motion: reduce) { .occasion-greeting { animation: none; } }
+      .know-more-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 17px; color: #6554cf; font-size: 14px; font-weight: 800; text-decoration: none; }
+      .know-more-link span { font-size: 18px; transition: transform .2s ease; }
+      .know-more-link:hover span, .know-more-link:focus-visible span { transform: translateX(3px); }
+      .know-more-link:focus-visible { outline: 2px solid #ffdb66; outline-offset: 4px; }
+      .doctor-popup { position: fixed; z-index: 145; inset: 0; display: grid; place-items: center; padding: 24px; background: rgba(35,28,70,.54); opacity: 0; visibility: hidden; transition: opacity .24s ease, visibility .24s ease; }
+      .doctor-popup.is-visible { opacity: 1; visibility: visible; }
+      .doctor-popup-card { position: relative; width: min(100%, 690px); max-height: min(80dvh, 680px); overflow-y: auto; padding: 43px 38px 35px; border: 1px solid #e0dbff; border-radius: 27px; color: #48415f; background: #fffdf8; box-shadow: 0 25px 65px rgba(27,20,71,.3); transform: translateY(14px) scale(.98); transition: transform .24s cubic-bezier(.2,.8,.25,1); }
+      .doctor-popup.is-visible .doctor-popup-card { transform: translateY(0) scale(1); }
+      .doctor-popup-close { position: absolute; top: 13px; right: 13px; display: grid; place-items: center; width: 31px; height: 31px; padding: 0; border: 0; border-radius: 50%; color: #594b98; background: #eeeaff; font-size: 21px; line-height: 1; cursor: pointer; }
+      .doctor-popup-close:hover, .doctor-popup-close:focus-visible { color: #fff; background: #6554cf; outline: 2px solid #ffdb66; outline-offset: 2px; }
+      .doctor-popup-kicker { margin: 0 0 9px; color: #7563d7; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; }
+      .doctor-popup h2 { margin: 0 0 21px; color: #40365f; font-family: "Fredoka", sans-serif; font-size: clamp(27px, 5vw, 38px); line-height: 1.1; letter-spacing: -.8px; }
+      .doctor-popup p { margin: 0 0 16px; color: #625d78; font-size: 16px; line-height: 1.68; }
+      .doctor-popup p:last-child { margin-bottom: 0; }
+      body.doctor-popup-open { overflow: hidden; }
+      .side-menu.is-open { transform: translateX(0); }
+      .side-menu-overlay.is-open { opacity: 1; pointer-events: auto; }
+      .side-menu-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 28px; }
+      .side-menu-head strong { font: 600 23px/1 "Fredoka", sans-serif; }
+      .side-menu-close { display: grid; place-items: center; width: 37px; height: 37px; padding: 0; border: 1px solid #ded7fb; border-radius: 12px; color: #594a9f; background: #f2efff; font-size: 25px; line-height: 1; cursor: pointer; }
+      .side-menu nav { display: grid; gap: 8px; }
+      .side-menu nav a { display: flex; align-items: center; min-height: 48px; padding: 11px 13px; border-radius: 13px; color: #514579; font-weight: 700; text-decoration: none; transition: color .2s ease, background .2s ease, transform .2s ease; }
+      .side-menu nav a::before { content: "→"; margin-right: 11px; color: #7766d8; font-size: 18px; }
+      .side-menu nav a:hover, .side-menu nav a:focus-visible { color: #fff; background: #6554cf; transform: translateX(3px); outline: none; }
+      .side-menu nav a:hover::before, .side-menu nav a:focus-visible::before { color: #ffdb66; }
+      body.menu-open { overflow: hidden; }
+      .gallery-total { font-style: normal; }
+      .event-card-link { display: block; color: inherit; text-decoration: none; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
+      .event-card-link:hover, .event-card-link:focus-visible { transform: translateY(-4px); box-shadow: 0 16px 26px rgba(67, 51, 116, .18); outline: none; }
+      .past-events { display: none; padding: 76px 0; background: #f6f3ff; scroll-margin-top: 18px; }
+      .past-events.is-open { display: block; }
+      .past-events .wrap { position: relative; }
+      .past-events .section-heading { padding-right: 118px; }
+      .past-events-close { position: absolute; top: 0; right: 0; display: inline-flex; align-items: center; gap: 7px; padding: 9px 13px; border: 1px solid #d8d0fb; border-radius: 999px; color: #594a9f; background: #fff; font-size: 13px; font-weight: 700; text-decoration: none; box-shadow: 0 5px 14px rgba(77,62,157,.08); }
+      .past-events-close:hover, .past-events-close:focus-visible { color: #fff; background: #6554cf; outline: none; }
+      .past-events-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 24px; align-items: stretch; }
+      .past-events-photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .past-events-photos figure { min-height: 170px; margin: 0; overflow: hidden; border-radius: 18px; background: #ded9fa; }
+      .past-events-photos figure:first-child { grid-row: span 2; min-height: 352px; }
+      .past-events-photos img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .35s ease; }
+      .past-events-photos figure:hover img { transform: scale(1.04); }
+      .past-event-video { min-height: 352px; position: relative; overflow: hidden; border-radius: 22px; background: #d8d0fb; }
+      .past-event-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #f0edff; }
+      .past-event-video .video-label { position: absolute; z-index: 1; top: 17px; left: 17px; right: 17px; padding: 12px 14px; border-radius: 14px; color: #fff; background: linear-gradient(90deg, rgba(43,31,91,.88), rgba(43,31,91,.26)); pointer-events: none; }
+      .past-event-video h3 { margin: 0 0 3px; font: 600 21px/1.1 "Fredoka", sans-serif; }
+      .past-event-video p { margin: 0; font-size: 12px; line-height: 1.45; color: #f0edff; }
+      .next-events { display: none; padding: 76px 0; background: #fff8e8; scroll-margin-top: 18px; }
+      .next-events.is-open { display: block; }
+      .next-events .wrap { position: relative; }
+      .next-events .section-heading { padding-right: 118px; }
+      .next-events-close { position: absolute; top: 0; right: 0; display: inline-flex; align-items: center; gap: 7px; padding: 9px 13px; border: 1px solid #f1d78c; border-radius: 999px; color: #715522; background: #fff; font-size: 13px; font-weight: 700; text-decoration: none; box-shadow: 0 5px 14px rgba(116,85,27,.08); }
+      .next-events-close:hover, .next-events-close:focus-visible { color: #fff; background: #c98b24; outline: none; }
+      .next-events-panel { display: grid; grid-template-columns: .85fr 1.15fr; gap: 22px; }
+      .next-events-mark { display: grid; place-items: center; min-height: 292px; padding: 30px; border-radius: 22px; background: #ffd979; color: #624d77; text-align: center; }
+      .next-events-mark span { display: block; font-size: 52px; }
+      .next-events-mark strong { display: block; margin-top: 12px; font: 600 26px/1.05 "Fredoka", sans-serif; }
+      .next-events-copy { min-height: 292px; padding: 32px; border-radius: 22px; background: #fff; box-shadow: 0 14px 32px rgba(133,98,31,.09); }
+      .next-events-copy .event-tag { color: #715522; background: #fff1c7; }
+      .next-events-copy h3 { margin: 23px 0 10px; font: 600 29px/1.1 "Fredoka", sans-serif; color: #3f365d; }
+      .next-events-copy p { max-width: 490px; margin: 0; color: #625d78; font-size: 15px; line-height: 1.6; }
+      .next-event-link { display: inline-flex; align-items: center; min-height: 39px; margin-top: 20px; padding: 0 14px; border: 1px solid #7563d7; border-radius: 11px; color: #fff; background: #7563d7; font-size: 13px; font-weight: 700; text-decoration: none; transition: transform .2s ease, background .2s ease; }
+      .next-event-link:hover, .next-event-link:focus-visible { background: #5f4bc5; transform: translateY(-1px); outline: 2px solid #ffdb66; outline-offset: 3px; }
+      .next-event-link.is-placeholder { border-style: dashed; color: #7563d7; background: #faf8ff; cursor: default; }
+      .next-event-link.is-placeholder:hover { background: #faf8ff; transform: none; }
+      .parent-resources { padding: 82px 0; background: #f6f3ff; }
+      .resources-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+      .resource-card { min-height: 194px; padding: 22px; border: 1px solid #e2dcff; border-radius: 22px; background: #fff; box-shadow: 0 12px 26px rgba(77,62,157,.07); }
+      .resource-icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 14px; background: #e7e1ff; color: #5a49b6; font: 600 21px/1 "Fredoka", sans-serif; }
+      .resource-card h3 { margin: 20px 0 7px; color: #3f365d; font: 600 20px/1.1 "Fredoka", sans-serif; }
+      .resource-card p { margin: 0; color: #706a82; font-size: 13px; line-height: 1.5; }
+      .resource-status { display: inline-flex; align-items: center; gap: 7px; margin-top: 17px; color: #5c4dac; font-size: 11px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; }
+      .resource-status.resource-download { text-decoration: none; }
+      .resource-status::before { content: "↓"; display: grid; place-items: center; width: 19px; height: 19px; border-radius: 50%; background: #f0edff; font-size: 13px; }
+      .testimonials-section { padding: 82px 0; background: #fffdf8; }
+      .testimonials-carousel { position: relative; }
+      .testimonials-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 36px) / 3); gap: 18px; overflow-x: auto; padding: 9px 2px 18px; scroll-behavior: smooth; scroll-snap-type: x mandatory; scrollbar-width: none; }
+      .testimonials-track::-webkit-scrollbar { display: none; }
+      .testimonial-card { display: flex; flex-direction: column; min-height: 218px; padding: 25px; border: 1px solid #e4def9; border-radius: 22px; background: #fff; box-shadow: 0 12px 28px rgba(77,62,157,.07); }
+      .testimonials-track .testimonial-card { scroll-snap-align: start; }
+      .testimonial-stars { color: #e8a93e; font-size: 17px; letter-spacing: 2px; }
+      .testimonial-card blockquote { margin: 18px 0 21px; color: #5f5974; font-size: 15px; line-height: 1.65; }
+      .testimonial-card footer { margin-top: auto; padding: 0; color: #554a83; background: transparent; font-size: 12px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase; }
+      .testimonial-card footer span { display: block; margin-top: 5px; color: #878096; font-size: 10px; font-weight: 600; letter-spacing: .25px; }
+      .testimonial-source { display: inline-block; margin-top: 8px; color: #6958ca; font-size: 11px; font-weight: 800; letter-spacing: 0; text-decoration: none; text-transform: none; }
+      .testimonial-source:hover, .testimonial-source:focus-visible { color: #4d3db1; text-decoration: underline; }
+      .testimonial-controls { display: flex; align-items: center; justify-content: flex-end; gap: 9px; margin-top: 10px; }
+      .testimonial-control { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid #d9d1fa; border-radius: 50%; color: #5746ad; background: #fff; cursor: pointer; font: 800 20px/1 "DM Sans", sans-serif; transition: transform .18s ease, background .18s ease; }
+      .testimonial-control:hover, .testimonial-control:focus-visible { color: #fff; background: #6754cd; transform: translateY(-2px); outline: none; }
+      .faq-section { padding: 82px 0; background: var(--lilac); }
+      .faq-section .section-heading { margin-bottom: 30px; }
+      .faq-list { display: grid; gap: 11px; max-width: 920px; }
+      .faq-item { padding: 20px 21px; border: 1px solid #e2dcff; border-radius: 17px; background: #fff; box-shadow: 0 7px 18px rgba(77,62,157,.05); }
+      .faq-item h3 { margin: 0 0 9px; color: #453b67; font: 700 15px/1.4 "DM Sans", sans-serif; }
+      .faq-answer { padding: 0 21px 20px; color: #6d6780; font-size: 14px; line-height: 1.65; }
+      .hero-copy .actions { margin-top: 32px; }
+      .vaccine-booking { margin-top: 25px; }
+      .hero-family-art { display: flex; align-items: end; justify-content: flex-end; height: 390px; }
+      .hero-family-art img { width: min(100%, 570px); height: 390px; object-fit: contain; object-position: right bottom; filter: drop-shadow(0 18px 18px rgba(45,34,100,.26)); }
+      .doctor-section { grid-template-columns: 180px minmax(250px, 1fr) minmax(340px, 420px); gap: 42px; }
+      .care-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; row-gap: 0; font-size: 14px; }
+      .care-list div { display: flex; align-items: flex-start; gap: 8px; min-height: 57px; padding: 12px 0; line-height: 1.35; }
+      .care-list span { flex: 0 0 18px; margin: 2px 0 0; }
+      .care-list div:nth-child(7), .care-list div:nth-child(8) { grid-column: 1 / -1; white-space: nowrap; }
+      .service-vaccination { position: relative; cursor: help; }
+      .service-newborn { position: relative; cursor: help; }
+      .service-metabolic { position: relative; cursor: help; }
+      .service-growth { position: relative; cursor: help; }
+      .service-nutrition { position: relative; cursor: help; }
+      .service-dietary { position: relative; cursor: help; }
+      .service-wellbaby { position: relative; cursor: help; }
+      .service-wellness { position: relative; cursor: help; }
+      .newborn-popover { position: absolute; z-index: 25; top: calc(100% + 8px); left: 0; display: none; width: min(385px, 88vw); padding: 16px 18px; border: 1px solid #cfc5ff; border-radius: 14px; background: #f4f1ff; color: #4a4370; box-shadow: 0 16px 32px rgba(72, 59, 142, .22); font-size: 12px; font-weight: 500; line-height: 1.55; }
+      .newborn-popover strong { display: block; margin-bottom: 8px; color: #5547a4; font-size: 14px; }
+      .newborn-popover p { margin: 0; }
+      .newborn-popover p + p { margin-top: 10px; }
+      .service-newborn:hover .newborn-popover, .service-newborn:focus .newborn-popover { display: block; }
+      .metabolic-popover { white-space: normal; }
+      .growth-popover { white-space: normal; }
+      .service-metabolic:hover .metabolic-popover, .service-metabolic:focus .metabolic-popover { display: block; }
+      .service-growth:hover .growth-popover, .service-growth:focus .growth-popover { display: block; }
+      .service-nutrition:hover .nutrition-popover, .service-nutrition:focus .nutrition-popover { display: block; }
+      .service-dietary:hover .dietary-popover, .service-dietary:focus .dietary-popover { display: block; }
+      .service-wellbaby:hover .wellbaby-popover, .service-wellbaby:focus .wellbaby-popover { display: block; }
+      .service-wellness:hover .wellness-popover, .service-wellness:focus .wellness-popover { display: block; }
+      .vaccination-popover { position: absolute; z-index: 25; top: calc(100% + 8px); left: 0; display: none; width: min(385px, 88vw); padding: 16px 18px; border: 1px solid #cfc5ff; border-radius: 14px; background: #f4f1ff; color: #4a4370; box-shadow: 0 16px 32px rgba(72, 59, 142, .22); font-size: 12px; font-weight: 500; }
+      .vaccination-popover strong { display: block; margin-bottom: 8px; color: #5547a4; font-size: 14px; }
+      .vaccination-popover ul { columns: 2; gap: 22px; margin: 0; padding-left: 17px; line-height: 1.65; }
+      .service-vaccination:hover .vaccination-popover, .service-vaccination:focus .vaccination-popover { display: block; }
+      @media (max-width: 760px) {
+        .brand { font-size: 10px; }
+        .hero-family-art { height: 250px; width: 100%; margin: 14px 0 0; transform: none; }
+        .hero-family-art img { width: min(100%, 430px); height: 250px; }
+        .care-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 14px; font-size: 12px; }
+        .care-list div { min-height: 66px; padding: 10px 0; }
+        .care-list span { display: inline-block; margin: 2px 0 0; }
+        .vaccination-popover { width: min(300px, 85vw); font-size: 11px; }
+        .vaccination-popover ul { columns: 1; }
+        .newborn-popover { width: min(300px, 85vw); font-size: 11px; }
+        .site-header .brand .clinic-name small { font-size: 9px; letter-spacing: 1.15px; }
+      }
+      /* Phone-first refinements: keep every section within the viewport and make tap targets readable. */
+      @media (max-width: 760px) {
+        html, body { overflow-x: hidden; }
+        .wrap { width: min(100% - 32px, 560px); }
+        .site-header { display: grid; grid-template-columns: minmax(0, 1fr) 29px; column-gap: 9px; height: auto; min-height: 100px; padding: 13px 0 10px; align-items: center; }
+        .site-header .brand { font-size: clamp(17px, 5vw, 21px); line-height: 1.08; }
+        .site-header .brand .clinic-name { gap: 9px; white-space: normal; }
+        .site-header .brand .clinic-name small { font-size: 10px; letter-spacing: .85px; white-space: nowrap; }
+        .header-social { display: none; }
+        .menu-toggle { position: static; grid-column: 2; grid-row: 1; align-self: center; z-index: 6; width: 29px; height: 29px; margin: 0; border-radius: 50%; }
+        .site-header .brand { grid-column: 1; grid-row: 1; width: 100%; min-width: 0; max-width: none; }
+        .side-menu { width: min(340px, calc(100vw - 20px)); padding: 23px 20px; }
+        .hero { min-height: 0; }
+        .hero-content { padding: 22px 0 72px; }
+        .hero-copy .eyebrow { margin-bottom: 14px; font-size: 10px; line-height: 1.35; }
+        h1 { font-size: clamp(42px, 12.5vw, 58px); line-height: 1; }
+        .hero-copy .actions { margin-top: 25px; gap: 10px; }
+        .button { min-height: 48px; height: auto; padding: 11px 16px; font-size: 14px; }
+        .hero-family-art { height: clamp(195px, 59vw, 255px); margin: 12px 0 0; justify-content: center; }
+        .hero-family-art img { width: 100%; height: 100%; object-position: center bottom; }
+        .doctor-section { gap: 22px; padding: 50px 0; }
+        .doctor-copy h2 { font-size: 30px; }
+        .credentials { font-size: 14px; }
+        .care-list { grid-template-columns: 1fr; gap: 0; font-size: 14px; }
+        .care-list div, .care-list div:nth-child(7), .care-list div:nth-child(8) { grid-column: auto; min-height: 0; padding: 13px 0; white-space: normal; }
+        .care-list div { display: grid; grid-template-columns: 28px minmax(0, 1fr); align-items: center; gap: 8px; }
+        .care-list span { margin: 0; }
+        .newborn-popover, .vaccination-popover { position: fixed; z-index: 90; top: 50%; right: 16px; left: 16px; width: auto; max-height: 72vh; overflow: auto; transform: translateY(-50%); padding: 16px; font-size: 12px; }
+        .vaccination-popover ul { columns: 1; }
+        .section-heading h2, .vaccine-section h2, .visit h2 { font-size: 31px; }
+        .section-heading > p { font-size: 14px; }
+        .gallery-slides { height: 245px; }
+        .gallery-slide { width: 62%; height: 76%; }
+        .gallery-slide.is-left { transform: translate(-111%, -50%) scale(.7) !important; }
+        .gallery-slide.is-right { transform: translate(11%, -50%) scale(.7) !important; }
+        .vaccine-section, .gallery-section, .events-section, .visit { padding: 52px 0; }
+        .parent-resources, .faq-section { padding: 52px 0; }
+        .faq-item { padding: 17px; }
+        .faq-item h3 { font-size: 14px; }
+        .faq-answer { padding: 0; font-size: 13px; }
+        .resources-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+        .resource-card { min-height: 172px; padding: 18px; border-radius: 18px; }
+        .resource-card h3 { margin-top: 16px; font-size: 18px; }
+        .resource-card p { font-size: 12px; }
+        .details-card br { display: block; }
+        .detail-row p { font-size: 14px; }
+        footer { padding: 24px 0; }
+      }
+      @media (max-width: 390px) {
+        .site-header .brand { font-size: 17px; }
+        .site-header .brand .clinic-name small { font-size: 9px; }
+        .header-social a, .menu-toggle { width: 27px; height: 27px; }
+        .past-events { padding: 52px 0; }
+        .past-events-close { position: static; width: max-content; margin: 0 0 17px auto; }
+        .past-events .section-heading { padding-right: 0; }
+        .past-events-grid { grid-template-columns: 1fr; gap: 16px; }
+        .past-events-photos figure { min-height: 120px; border-radius: 14px; }
+        .past-events-photos figure:first-child { min-height: 252px; }
+        .past-event-video { min-height: 250px; padding: 22px; border-radius: 18px; }
+        .next-events { padding: 52px 0; }
+        .next-events-close { position: static; width: max-content; margin: 0 0 17px auto; }
+        .next-events .section-heading { padding-right: 0; }
+        .next-events-panel { grid-template-columns: 1fr; gap: 14px; }
+        .next-events-mark, .next-events-copy { min-height: 210px; padding: 24px; border-radius: 18px; }
+        h1 { font-size: 42px; }
+        .button { width: 100%; justify-content: center; }
+        .hero-family-art { height: 190px; }
+      }
+      /* Complete small-screen layout pass. */
+      @media (max-width: 760px) {
+        img, video { max-width: 100%; }
+        .wrap, .hero-content > *, .doctor-section > *, .visit-layout > *, .past-events-grid > *, .next-events-panel > * { min-width: 0; }
+        .doctor-section { display: grid; grid-template-columns: 1fr; gap: 20px; padding: 52px 0; text-align: left; }
+        .doctor-section > .doctor-photo { justify-self: center; margin: 0 0 4px; }
+        .doctor-copy h2 { font-size: clamp(29px, 8.5vw, 36px); }
+        .credentials, .registration { overflow-wrap: anywhere; }
+        .care-list { width: 100%; }
+        .past-events, .next-events { padding: 52px 0; }
+        .past-events-close, .next-events-close { position: static; width: max-content; margin: 0 0 17px auto; }
+        .past-events .section-heading, .next-events .section-heading { padding-right: 0; }
+        .past-events-grid, .next-events-panel { grid-template-columns: 1fr; gap: 16px; }
+        .testimonials-section { padding: 52px 0; }
+        .testimonials-track { grid-auto-columns: 100%; gap: 14px; padding-bottom: 14px; }
+        .testimonial-card { min-height: 0; padding: 22px; }
+        .past-events-photos figure { min-height: 132px; border-radius: 16px; }
+        .past-events-photos figure:first-child { min-height: 280px; }
+        .past-event-video { min-height: 270px; border-radius: 18px; }
+        .next-events-mark, .next-events-copy { min-height: 210px; padding: 24px; border-radius: 18px; }
+        .next-events-copy h3 { font-size: 26px; }
+        .resource-status { font-size: 10px; }
+      }
+      /* Keep the clinic identity and key links available throughout the page. */
+      .site-header { position: fixed; z-index: 100; top: 0; right: 0; left: 0; width: 100%; height: 78px; margin: 0; padding: 0 max(24px, calc((100vw - 1120px) / 2)); background: transparent; box-shadow: none; transition: background .2s ease; }
+      .site-header.is-scrolled { background: linear-gradient(141deg,#7563d7 0%,#6554cf 56%,#5f4bc5 100%); }
+      /* Match the breathing room: header → greeting → tagline. */
+      .hero-content { padding-top: 108px; }
+      @media (max-width: 760px) {
+        .site-header { min-height: 104px; padding: 11px 16px 9px; }
+        .header-social { display: none; }
+        .hero-content { padding-top: 128px; }
+        .event-popup { padding: 18px; }
+        .event-popup-card { padding: 34px 22px 25px; border-radius: 23px; }
+        .doctor-popup { padding: 18px; }
+        .doctor-popup-card { max-height: 84dvh; padding: 40px 22px 25px; border-radius: 22px; }
+        .doctor-popup p { font-size: 15px; }
+        .occasion-greeting { gap: 8px; margin: 0 0 24px; padding: 9px 12px 10px 9px; border-radius: 15px; font-size: 13px; }
+        .occasion-greeting span[aria-hidden="true"] { width: 31px; height: 31px; border-radius: 10px 10px 10px 4px; font-size: 16px; }
+      }
+      .header-social a[aria-label="WhatsApp Channel"]::before, .side-menu-social-links a[aria-label="WhatsApp Channel"]::before { width: 17px; height: 17px; background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTIwIDExLjVhOCA4IDAgMCAxLTExLjcgN0w0IDIwbDEuNS00LjFBOCA4IDAgMSAxIDIwIDExLjVaIiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05IDguNWMuMy0uNi43LS42IDEtLjJsLjcgMS4xYy4yLjMuMi41IDAgLjdsLS41LjVjLjUuOSAxLjIgMS42IDIuMSAyLjFsLjUtLjVjLjItLjIuNC0uMi43IDBsMS4xLjdjLjQuMy40LjctLjIgMS0uNC4yLS45LjMtMS4zLjItMi0uNS00LjMtMi44LTQuOC00LjgtLjEtLjQgMC0uOS4yLTEuM1oiIGZpbGw9IndoaXRlIi8+PC9zdmc+") center / contain no-repeat; -webkit-mask: none; mask: none; }
+      .visit { background: var(--paper); }
+      .location-map { padding: 42px 0 34px; background: #fffdf8; }
+      .location-map .wrap { display: flex; }
+      .location-map img { display: block; width: 100%; height: auto; border: 1px solid #e1daf9; border-radius: 18px; box-shadow: 0 12px 28px rgba(70,54,139,.12); }
+      .mobile-quick-actions { display: none; }
+      @media (max-width: 760px) { .location-map { padding: 32px 0 26px; } .location-map .wrap { justify-content: center; } .location-map img { width: 100%; border-radius: 14px; } body { padding-bottom: 78px; } .hero .actions { display: none; } .mobile-quick-actions { position: fixed; z-index: 105; right: 0; bottom: 0; left: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 9px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: linear-gradient(141deg,#7563d7 0%,#6554cf 56%,#5f4bc5 100%); box-shadow: 0 -7px 24px rgba(34,27,71,.19); } .mobile-quick-actions a { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 9px 10px; border-radius: 13px; font-size: 12px; font-weight: 800; line-height: 1.15; text-align: center; text-decoration: none; } .mobile-quick-actions .quick-book { color: #3f365d; background: #ffdb66; } .mobile-quick-actions .quick-find { border: 1px solid rgba(255,255,255,.5); color: #fff; background: rgba(255,255,255,.12); } }
+      /* Shared type scale: a consistent hierarchy for every section and screen size. */
+      .site-header .brand { font-size: clamp(19px, 2.25vw, 29px); line-height: 1.12; }
+      .eyebrow { margin: 0 0 13px; font-size: clamp(10px, 1vw, 12px); line-height: 1.35; letter-spacing: 1.55px; }
+      .hero-copy h1 { margin-bottom: 20px; }
+      .hero-copy .eyebrow { margin-bottom: 16px; }
+      .doctor-copy h2, .section-heading h2, .vaccine-section h2, .visit h2 { font-size: clamp(31px, 3.25vw, 40px); line-height: 1.12; letter-spacing: -.9px; }
+      .doctor-copy h2, .vaccine-section h2, .visit h2 { margin-bottom: 15px; }
+      .section-heading h2 { margin-bottom: 0; }
+      .section-heading > p { max-width: 390px; font-size: clamp(14px, 1.35vw, 16px); line-height: 1.6; }
+      .credentials { margin: 0 0 9px; font-size: clamp(14px, 1.35vw, 16px); line-height: 1.55; }
+      .registration { font-size: clamp(12px, 1.1vw, 13px); line-height: 1.45; }
+      .vaccine-intro > p:not(.eyebrow), .visit-copy > p:not(.eyebrow) { margin-top: 0; font-size: clamp(15px, 1.45vw, 17px); line-height: 1.65; }
+      .event-card h3, .next-events-copy h3 { line-height: 1.16; }
+      .event-card p, .next-events-copy p, .resource-card p, .faq-answer, .detail-row p { font-size: clamp(13px, 1.2vw, 15px); line-height: 1.6; }
+      .resource-card h3 { font-size: clamp(18px, 1.7vw, 21px); line-height: 1.2; }
+      .faq-item h3 { font-size: clamp(14px, 1.3vw, 16px); line-height: 1.45; }
+      .detail-row strong, .phone-row strong { font-size: clamp(14px, 1.25vw, 15px); line-height: 1.35; }
+      @media (max-width: 760px) {
+        .site-header .brand { font-size: clamp(19px, 5.6vw, 23px); }
+        .eyebrow { margin-bottom: 11px; font-size: 10px; letter-spacing: 1.3px; }
+        .hero-copy .eyebrow { margin-bottom: 13px; }
+        .hero-copy h1 { margin-bottom: 17px; }
+        .doctor-copy h2, .section-heading h2, .vaccine-section h2, .visit h2 { font-size: clamp(29px, 8.4vw, 34px); line-height: 1.14; }
+        .section-heading > p { margin-top: 12px; font-size: 14px; line-height: 1.58; }
+        .vaccine-intro > p:not(.eyebrow), .visit-copy > p:not(.eyebrow) { font-size: 15px; line-height: 1.62; }
+        .event-card p, .next-events-copy p, .resource-card p, .faq-answer, .detail-row p { font-size: 13px; line-height: 1.58; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero" id="top">
+        <div class="sky-shape shape-one"></div>
+        <div class="sky-shape shape-two"></div>
+        <header class="site-header wrap">
+          <a class="brand" href="#top" aria-label="Clinic home">
+            <span class="clinic-name">Dr. Archana Khujat Kalyani Paediatric Clinic<small>Bavdhan, Pune</small></span>
+          </a>
+          <nav class="header-social" aria-label="Clinic social links">
+            <a class="google-link" href="https://maps.google.com/?q=110+First+floor+Business+square+opposite+DSK+Ranwara+Bavdhan+Pune+411021" target="_blank" rel="noopener" aria-label="Find the clinic on Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.31v2.77h3.57c2.09-1.93 3.27-4.77 3.27-8.09Z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.29-2.66l-3.57-2.77c-.98.66-2.24 1.06-3.72 1.06-2.87 0-5.3-1.94-6.17-4.55H2.14v2.84A11 11 0 0 0 12 23Z"/><path fill="#FBBC05" d="M5.83 14.08A6.6 6.6 0 0 1 5.48 12c0-.72.12-1.42.35-2.08V7.08H2.14A11 11 0 0 0 1 12c0 1.77.42 3.45 1.14 4.92l3.69-2.84Z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.07.56 4.21 1.65l3.15-3.15C17.46 2.11 14.97 1 12 1a11 11 0 0 0-9.86 6.08l3.69 2.84C6.7 7.31 9.13 5.38 12 5.38Z"/></svg></a>
+            <a href="https://www.instagram.com/paediatric.clinic.bavdhan?igsi=YjQyOWpzdzVsZ3Jx" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 2h9.2A5.4 5.4 0 0 1 22 7.4v9.2a5.4 5.4 0 0 1-5.4 5.4H7.4A5.4 5.4 0 0 1 2 16.6V7.4A5.4 5.4 0 0 1 7.4 2Zm-.2 2A3.2 3.2 0 0 0 4 7.2v9.6A3.2 3.2 0 0 0 7.2 20h9.6a3.2 3.2 0 0 0 3.2-3.2V7.2A3.2 3.2 0 0 0 16.8 4H7.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg></a>
+            <a href="https://youtube.com/@paediatricclinicbavdhan?si=Jg3Fnfcq4SFekSUU" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a>
+            <a href="mailto:paediatric.clnic.bavdhan@gmail.com" aria-label="Email the clinic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.5l9 5.6 9-5.6V7H3Zm18 10V9.8l-8.5 5.3a1 1 0 0 1-1.1 0L3 9.8V17h18Z"/></svg></a>
+            <a href="https://whatsapp.com/channel/0029VbCsxTp42Dca2lqVN535" target="_blank" rel="noopener" aria-label="WhatsApp Channel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.9 9.9 0 0 0-8.48 15.01L2.2 21.8l4.9-1.28A9.9 9.9 0 1 0 12 2Zm0 2a7.9 7.9 0 0 1 6.71 12.07l-.31.5.65 2.39-2.45-.64-.48.28A7.9 7.9 0 1 1 12 4Zm-3.03 3.1c-.28 0-.6.04-.91.37-.31.33-1.19 1.16-1.19 2.83 0 1.67 1.22 3.29 1.39 3.52.17.23 2.4 3.67 5.81 5.02 2.83 1.12 3.41.9 4.03.84.62-.06 2-.82 2.28-1.62.28-.8.28-1.48.2-1.62-.08-.14-.28-.23-.58-.38-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.27-.47-2.42-1.5-.9-.81-1.5-1.8-1.67-2.1-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.65-.93-2.26-.24-.57-.49-.5-.68-.51h-.59Z"/></svg></a>
+          </nav>
+          <button class="menu-toggle" type="button" aria-label="Open section menu" aria-controls="section-menu" aria-expanded="false"><span></span><span></span></button>
+        </header>
+
+        <div class="hero-content wrap">
+          <div class="hero-copy">
+            <p class="occasion-greeting" id="occasion-greeting" role="status" hidden><span aria-hidden="true">🎉</span><span><strong></strong> <span class="occasion-message"></span></span></p>
+            <p class="eyebrow">Trusted paediatric care & vaccination centre in Bavdhan</p>
+            <h1>Nurturing health.<br /><em>Inspiring future.</em></h1>
+            <div class="actions">
+              <a class="button button-primary" href="https://wa.me/9175720159?text=Hello%21%0A%0AI%20would%20like%20to%20book%20an%20appointment%20at%20%2ADr.%20Archana%20Khujat%20Kalyani%20Paediatric%20Clinic.%2A%0A%0APlease%20confirm%20the%20available%20appointment%20slot.%0A%0AThank%20you" target="_blank" rel="noopener">Book a consultation <span aria-hidden="true">→</span></a>
+              <a class="button button-quiet" href="#visit">Find the clinic</a>
+            </div>
+          </div>
+
+          <div class="hero-art hero-family-art"><img src="assets/hero-family-cutout.png" alt="A friendly paediatrician with three happy children" /></div>
+        </div>
+        <div class="wave" aria-hidden="true"></div>
+      </section>
+
+      <section class="doctor-section wrap" id="paediatrician">
+        <figure class="doctor-photo">
+          <img src="assets/dr-archana-khujat-kalyani.jpg" alt="Dr. Archana Khujat Kalyani in her clinic coat" />
+          <figcaption><span>✦</span> Hello!</figcaption>
+        </figure>
+        <div class="doctor-copy">
+          <p class="eyebrow purple">Meet your paediatrician</p>
+          <h2>Dr. Archana Khujat Kalyani</h2>
+          <p class="credentials">MBBS, MD Paediatrics<span class="experience-line">10+ years · Consulting Paediatrician & Neonatologist</span></p>
+          <p class="registration">MMC Reg. no: 2015/03/0824</p>
+          <a class="know-more-link" href="#doctor-popup">Know more <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="care-list" aria-label="Clinic care highlights">
+          <div class="service-newborn" tabindex="0"><span>01</span><b>Newborn care</b><aside class="newborn-popover" role="tooltip"><strong>1. Newborn Care</strong><p>Comprehensive newborn check-ups to assess feeding, weight gain, jaundice, sleep, and overall health.</p><p>Parents receive practical guidance on breastfeeding, hygiene, cord care, safe sleep, and common newborn concerns.</p></aside></div><div class="service-wellness" tabindex="0"><span>02</span><b>Child wellness</b><aside class="newborn-popover wellness-popover" role="tooltip"><strong>2. Child Wellness</strong><p>Regular wellness visits help monitor your child’s physical health, development, behaviour, and overall well-being.</p><p>Preventive guidance and timely screening help identify potential concerns early and support healthy childhood.</p></aside></div><div class="service-vaccination" tabindex="0"><span>03</span><b>Vaccinations</b><aside class="vaccination-popover" role="tooltip"><strong>3. Vaccination</strong><ul><li>Tuberculosis</li><li>Polio</li><li>Hepatitis B</li><li>Diphtheria</li><li>Pertussis</li><li>Tetanus</li><li>H. influenzae B</li><li>Rotavirus</li><li>Pneumococcal</li><li>Influenza</li><li>Typhoid</li><li>Measles, Mumps, Rubella</li><li>Meningococcal</li><li>Hepatitis A</li><li>Varicella</li><li>Human Papilloma Virus (HPV)</li></ul></aside></div><div class="service-wellbaby" tabindex="0"><span>04</span><b>Well baby clinic</b><aside class="newborn-popover wellbaby-popover" role="tooltip"><strong>4. Well Baby Clinic</strong><p>Routine baby check-ups focus on feeding, growth, development, sleep, and age-appropriate milestones.</p><p>Parents can also discuss everyday concerns and receive guidance for keeping their baby healthy and thriving.</p></aside></div><div class="service-dietary" tabindex="0"><span>05</span><b>Dietary counselling</b><aside class="newborn-popover dietary-popover" role="tooltip"><strong>5. Dietary Counselling</strong><p>Personalized nutrition guidance is provided according to your child’s age, growth, eating habits, and nutritional needs.</p><p>We help parents with breastfeeding, complementary feeding, picky eating, balanced diets, and healthy meal planning.</p></aside></div><div class="service-nutrition" tabindex="0"><span>06</span><b>Nutrition assessment</b><aside class="newborn-popover nutrition-popover" role="tooltip"><strong>6. Nutrition Assessment</strong><p>A detailed assessment of height, weight, growth pattern, dietary intake, and nutritional status helps identify deficiencies or excesses.</p><p>Individual recommendations are provided to support healthy growth, immunity, and development.</p></aside></div><div class="service-growth" tabindex="0"><span>07</span><b>Growth and development assessment</b><aside class="newborn-popover growth-popover" role="tooltip"><strong>7. Growth and Development Assessment</strong><p>Regular assessment helps track height, weight, head circumference, developmental milestones, behaviour, and learning.</p><p>Early identification of growth or developmental concerns allows timely guidance, evaluation, and intervention when needed.</p></aside></div><div class="service-metabolic" tabindex="0"><span>08</span><b>Obesity / Thyroid / Diabetic Clinic</b><aside class="newborn-popover metabolic-popover" role="tooltip"><strong>8. Obesity / Thyroid / Diabetic Clinic</strong><p>Specialized evaluation and follow-up are provided for childhood obesity and common thyroid or blood-sugar-related concerns.</p><p>The focus is on appropriate screening, healthy lifestyle changes, nutrition, growth monitoring, and individualized medical management.</p></aside></div>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="gallery">
+        <div class="wrap">
+          <div class="section-heading">
+            <div><p class="eyebrow purple">Gallery</p><h2>Our happy place</h2></div>
+            <p>Moments from the clinic will live here - gentle care, bright smiles, and tiny wins.</p>
+          </div>
+          <div class="gallery-carousel" aria-label="Clinic photo gallery" data-carousel>
+            <div class="gallery-slides">
+            <figure class="gallery-slide is-active" aria-hidden="false"><img src="assets/moments-selected/moment-01.jpg" alt="A moment at the paediatric clinic" fetchpriority="high" /><figcaption>Clinic moment 1 of 6</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/moment-02.jpg" alt="A moment at the paediatric clinic" loading="lazy" /><figcaption>Clinic moment 2 of 6</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/moment-03.jpg" alt="A moment at the paediatric clinic" loading="lazy" /><figcaption>Clinic moment 3 of 6</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/moment-04.jpg" alt="A moment at the paediatric clinic" loading="lazy" /><figcaption>Clinic moment 4 of 6</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/moment-05.jpg" alt="A moment at the paediatric clinic" loading="lazy" /><figcaption>Clinic moment 5 of 6</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/moment-06.jpg" alt="A moment at the paediatric clinic" loading="lazy" /><figcaption>Clinic moment 6 of 6</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/IMG_3826.jpg" alt="A look inside the paediatric clinic" loading="lazy" /><figcaption>Clinic interior</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/IMG_3827.jpg" alt="A look inside the paediatric clinic" loading="lazy" /><figcaption>Clinic interior</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/IMG_3829.jpg" alt="A look inside the paediatric clinic" loading="lazy" /><figcaption>Clinic interior</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/IMG_3830.jpg" alt="A look inside the paediatric clinic" loading="lazy" /><figcaption>Clinic interior</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/IMG_3853.jpg" alt="Dr. Archana at the paediatric clinic" loading="lazy" /><figcaption>Dr. Archana at the clinic</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/1D375632-13E5-4448-AD67-65491C2F0886_720x960.jpg" alt="Directions to the paediatric clinic" loading="lazy" /><figcaption>Finding the clinic</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/3CBDE201-69E3-48CC-BA15-2BDC429DCDC0_720x960.jpg" alt="Entrance to the paediatric clinic" loading="lazy" /><figcaption>Clinic entrance</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/5c245e03-5b60-41bd-b331-566d77ebcab5.JPG" alt="Business Square building" loading="lazy" /><figcaption>Business Square, Bavdhan</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/EF7BF33A-7CDC-48EE-8844-5202B2FBDA0F_720x960.jpg" alt="Entrance corridor to the paediatric clinic" loading="lazy" /><figcaption>Welcome to the clinic</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/20100632-3863-4CC6-BA88-E6B0DCE7248D.PNG" alt="Dr. Archana at the clinic" loading="lazy" /><figcaption>At the clinic</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/clinic_photo_1.jpg" alt="Dr. Archana caring for a child" loading="lazy" /><figcaption>Gentle care</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/clinic_photo_2.jpg" alt="Dr. Archana providing child care" loading="lazy" /><figcaption>Care in action</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/clinic_photo_3.jpg" alt="Dr. Archana with a young patient" loading="lazy" /><figcaption>Little moments of care</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/clinic_photo_4.jpg" alt="Dr. Archana at the paediatric clinic" loading="lazy" /><figcaption>Clinic welcome</figcaption></figure>
+            <figure class="gallery-slide" aria-hidden="true"><img src="assets/moments-selected/clinic_photo_5.jpg" alt="Growth assessment at the clinic" loading="lazy" /><figcaption>Growing well together</figcaption></figure>
+            </div>
+            <button class="gallery-control gallery-prev" type="button" aria-label="Previous photo">←</button>
+            <button class="gallery-control gallery-next" type="button" aria-label="Next photo">→</button>
+            <div class="gallery-counter" aria-live="polite"><span>1</span> / <i class="gallery-total">20</i></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="vaccine-section" id="vaccination">
+        <div class="wrap vaccine-layout">
+          <div class="vaccine-intro"><p class="eyebrow purple">Vaccination guide</p><h2>One small jab.<br />A big layer of care.</h2><p>Every child’s schedule is personal. We’ll help you stay prepared, informed, and on track.</p><a class="button button-primary vaccine-booking" href="https://wa.me/9175720159?text=Hello%21%0A%0AI%20would%20like%20to%20book%20a%20%2Avaccination%2A%20appointment%20at%20%2ADr.%20Archana%20Khujat%20Kalyani%20Paediatric%20Clinic.%2A%0A%0APlease%20confirm%20the%20available%20vaccination%20appointment%20slot.%0A%0AThank%20you" target="_blank" rel="noopener">Book a vaccination <span aria-hidden="true">→</span></a></div>
+          <div class="vaccine-tips">
+            <div class="tip"><span>01</span><div><strong>Bring the vaccination card</strong><p>It helps us record each visit and plan the next one.</p></div></div>
+            <div class="tip"><span>02</span><div><strong>Ask every question</strong><p>Our clinic can guide you through the schedule that is right for your child.</p></div></div>
+            <div class="tip"><span>03</span><div><strong>Keep a simple reminder</strong><p>A calendar note makes the next appointment easier to remember.</p></div></div>
+            <p class="guide-note">For the current National Immunization Schedule, please consult the <a href="https://www.mohfw.gov.in/pdf/NationalImmunizationSchedule.pdf" target="_blank" rel="noopener">Ministry of Health & Family Welfare guide</a> and your child’s clinician.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="events-section wrap" id="events">
+        <div class="section-heading"><div><p class="eyebrow purple">Clinic calendar</p><h2>Events & little celebrations</h2></div><p>Look back on shared moments and see what is around the corner.</p></div>
+        <div class="event-grid">
+          <a class="event-card event-card-link past" href="#past-events" aria-label="View past event photos and video"><span class="event-tag">Past event</span><span class="event-icon">✦</span><h3>Community moments</h3><p>See photos and video highlights from past clinic activities.</p></a>
+          <a class="event-card event-card-link planned" href="#next-events" aria-label="View next event details"><span class="event-tag">Coming up</span><span class="event-icon">☼</span><h3>Next event</h3><p>See upcoming clinic events and parent-friendly sessions.</p></a>
+        </div>
+      </section>
+
+      <section class="past-events" id="past-events" aria-hidden="true">
+        <div class="wrap">
+          <a class="past-events-close" href="#events" aria-label="Close past events and return to events">Close <span aria-hidden="true">×</span></a>
+          <div class="section-heading"><div><p class="eyebrow purple">Past events</p><h2>Memories worth sharing</h2></div><p>Photos from our clinic celebrations, community moments, and parent-friendly events.</p></div>
+          <div class="past-events-grid">
+            <div class="past-events-photos">
+              <figure><img src="assets/past-events/health-checkup-camp.png" alt="Thank-you poster for the health checkup camp" loading="lazy" /></figure>
+              <figure><img src="assets/past-events/clinic-team.jpg" alt="Clinic team at a past event" loading="lazy" /></figure>
+              <figure><img src="assets/past-events/clinic-celebration.jpg" alt="Clinic celebration at a past event" loading="lazy" /></figure>
+              <figure><img src="assets/past-events/IMG_4009.jpg" alt="A clinic celebration ritual" loading="lazy" /></figure>
+              <figure><img src="assets/past-events/IMG_4050.jpg" alt="Guests at a clinic celebration" loading="lazy" /></figure>
+            </div>
+            <div class="past-event-video">
+    <video controls playsinline preload="metadata" poster="assets/past-events/clinic-celebration.jpg" aria-label="Camp 2025 past event video"><source src="assets/past-events/health-checkup-camp-2025.mp4" type="video/mp4" />Your browser does not support this video.</video>
+              <div class="video-label"><h3>Camp 2025 highlights</h3><p>Watch a moment from our past event.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="next-events" id="next-events" aria-hidden="true">
+        <div class="wrap">
+          <a class="next-events-close" href="#events" aria-label="Close next event details and return to events">Close <span aria-hidden="true">×</span></a>
+          <div class="section-heading"><div><p class="eyebrow purple">Coming up</p><h2>Our next little gathering</h2></div><p>We are planning another warm, helpful clinic event for children and their families.</p></div>
+          <div class="next-events-panel">
+            <div class="next-events-mark"><div><span aria-hidden="true">☼</span><strong>Something lovely<br />is on the way</strong></div></div>
+            <div class="next-events-copy"><h3>Next clinic event</h3><p>Event dates, activities, photos, video highlights, and registration information will be shared here as soon as they are confirmed.</p><a class="next-event-link is-placeholder" id="next-event-link" aria-disabled="true">Coming soon..</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="parent-resources" id="parent-resources">
+        <div class="wrap">
+          <div class="section-heading"><div><p class="eyebrow purple">Parent’s library</p><h2>Helpful guides to keep close</h2></div><p>Downloadable PDFs, practical charts, and reliable references will be collected here for parents.</p></div>
+          <div class="resources-grid">
+            <article class="resource-card"><span class="resource-icon" aria-hidden="true">◫</span><h3>Diet charts</h3><p>Age-wise food ideas, meal planners, and helpful feeding references.</p><a class="resource-status resource-download" href="assets/resources/diet-chart.pdf" target="_blank" rel="noopener">Download PDF</a></article>
+            <article class="resource-card"><span class="resource-icon" aria-hidden="true">↗</span><h3>Milestone guides</h3><p>Easy milestone checklists to follow your child’s growth and development.</p><a class="resource-status resource-download" href="assets/resources/milestone-guides.pdf" target="_blank" rel="noopener">Download PDF</a></article>
+            <article class="resource-card"><span class="resource-icon" aria-hidden="true">✓</span><h3>Vaccination records</h3><p>Vaccination schedules and simple reminders for each important visit.</p><a class="resource-status resource-download" href="assets/resources/vaccination-records.pdf" target="_blank" rel="noopener">Download PDF</a></article>
+            <article class="resource-card"><span class="resource-icon" aria-hidden="true">♥</span><h3>Everyday care</h3><p>Useful reference sheets for common child-health questions at home.</p><a class="resource-status resource-download" href="assets/resources/everyday-care.pdf" target="_blank" rel="noopener">Download PDF</a></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-title">
+        <div class="wrap">
+          <div class="section-heading"><div><p class="eyebrow purple">Testimonials</p><h2 id="testimonials-title">Kind words from parents</h2></div><p>A space to show the care, comfort, and confidence families experienced at our clinic.</p></div>
+          <div class="testimonials-carousel" data-testimonials-carousel aria-label="Parent reviews carousel">
+            <div class="testimonials-track" tabindex="0">
+              <article class="testimonial-card"><div class="testimonial-stars" aria-label="Five stars">★★★★★</div><blockquote>“Dr. Archana’s genuine care and availability gave us confidence during a stressful time. Her kindness, patience, and personal attention are truly appreciated. Highly recommended!”</blockquote><footer>Animesh Bansal<span>Google review · 1 month ago</span><a class="testimonial-source" href="https://maps.app.goo.gl/WXeVpCXFA2fA4GWy5" target="_blank" rel="noopener">View on Google ↗</a></footer></article>
+              <article class="testimonial-card"><div class="testimonial-stars" aria-label="Five stars">★★★★★</div><blockquote>“We were visiting Dr. Archana for vaccinations of our baby; she is very kind in nature and a good paediatrician.”</blockquote><footer>Kunal Chikte<span>Google review · 5 months ago</span><a class="testimonial-source" href="https://maps.app.goo.gl/WoZGpvwJzBV2Zm7V6" target="_blank" rel="noopener">View on Google ↗</a></footer></article>
+              <article class="testimonial-card"><div class="testimonial-stars" aria-label="Five stars">★★★★★</div><blockquote>“She is so patient, kind, and understanding with kids. My child feels super comfortable around her, and she explains everything in a way that’s easy to understand. Highly recommend!”</blockquote><footer>CA Pravin Shivnechari<span>Google review · 9 months ago</span><a class="testimonial-source" href="https://maps.app.goo.gl/jBiPbtVVrK7PJkKdA" target="_blank" rel="noopener">View on Google ↗</a></footer></article>
+              <article class="testimonial-card"><div class="testimonial-stars" aria-label="Five stars">★★★★★</div><blockquote>“Gives time to solve our questions and has perfect solutions to our problems for our kids. Definitely recommend this. Best kids doctor in Bavdhan so far and very quick response.”</blockquote><footer>Kajal Rane<span>Google review · 9 months ago</span><a class="testimonial-source" href="https://maps.app.goo.gl/JL3CATX2SKw1S1uH8" target="_blank" rel="noopener">View on Google ↗</a></footer></article>
+              <article class="testimonial-card"><div class="testimonial-stars" aria-label="Five stars">★★★★★</div><blockquote>“I have consulted Dr Archana for my twins. They had seasonal cough and cold. Minimal medicines yet effective treatment. Recovered to a major extent in merely three days. Highly recommended.”</blockquote><footer>Mansi Vichare<span>Google review · 10 months ago</span><a class="testimonial-source" href="https://maps.app.goo.gl/qDj8oJbqjMTVZYsS6" target="_blank" rel="noopener">View on Google ↗</a></footer></article>
+              <article class="testimonial-card"><div class="testimonial-stars" aria-label="Five stars">★★★★★</div><blockquote>“Dr. Archana Khujat Kalyani is incredibly patient and great with kids. She is caring, knowledgeable, and experienced. Highly recommend!”</blockquote><footer>Vijay Ransing<span>Google review · 11 months ago</span><a class="testimonial-source" href="https://maps.app.goo.gl/iWhUwBsvzAeW5MHs8" target="_blank" rel="noopener">View on Google ↗</a></footer></article>
+              <article class="testimonial-card"><div class="testimonial-stars" aria-label="Five stars">★★★★★</div><blockquote>“Dr. Archana is an excellent paediatrician who genuinely cares for her patients. She patiently listens, provides clear guidance, and ensures my child feels comfortable during check-ups.”</blockquote><footer>Dr Shweta Ghatnekar<span>Google review · 11 months ago</span><a class="testimonial-source" href="https://maps.app.goo.gl/4m52dQVLynue1LaKA" target="_blank" rel="noopener">View on Google ↗</a></footer></article>
+              <article class="testimonial-card"><div class="testimonial-stars" aria-label="Five stars">★★★★★</div><blockquote>“Very knowledgeable, calm and considerate doctor. My son had viral symptoms for six days; she identified them correctly without recommending unnecessary tests.”</blockquote><footer>Sartaj Qureshi<span>Google review · 1 year ago</span><a class="testimonial-source" href="https://maps.app.goo.gl/F87uxjdKYF8y8Nrb7" target="_blank" rel="noopener">View on Google ↗</a></footer></article>
+              <article class="testimonial-card"><div class="testimonial-stars" aria-label="Five stars">★★★★★</div><blockquote>“Dr. Archana was our go-to doctor before we moved outside India. After almost 4.5 years, she is still our preferred paediatrician for both our children.”</blockquote><footer>Rithika Sid<span>Google review · 1 year ago</span><a class="testimonial-source" href="https://maps.app.goo.gl/FbDzbD8E2g5KJxad8" target="_blank" rel="noopener">View on Google ↗</a></footer></article>
+            </div>
+            <div class="testimonial-controls" aria-label="Review carousel controls"><button class="testimonial-control testimonial-prev" type="button" aria-label="Show previous reviews">←</button><button class="testimonial-control testimonial-next" type="button" aria-label="Show next reviews">→</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq" aria-labelledby="faq-title">
+        <div class="wrap">
+          <div class="section-heading"><div><p class="eyebrow purple">Frequently asked questions</p><h2 id="faq-title">Helpful answers for parents</h2></div><p>A few quick answers to common questions about your child’s care at the clinic.</p></div>
+          <div class="faq-list">
+            <article class="faq-item"><h3>Which paediatric vaccinations are available at your clinic?</h3><div class="faq-answer">We provide all newborn, infant, and childhood vaccinations including PCV, DTP, MMR, Hepatitis, Rotavirus, Flu, and adolescent vaccines.</div></article>
+            <article class="faq-item"><h3>Do I need an appointment for vaccination?</h3><div class="faq-answer">Walk-ins are accepted, but appointments ensure faster service.</div></article>
+            <article class="faq-item"><h3>What age groups do you treat?</h3><div class="faq-answer">From newborns to 18 years.</div></article>
+            <article class="faq-item"><h3>How do I know if my child’s development is normal?</h3><div class="faq-answer">We perform milestone-based assessments during every visit and guide parents on growth expectations.</div></article>
+            <article class="faq-item"><h3>Do you provide emergency paediatric care?</h3><div class="faq-answer">Yes, same-day consultations are available for fever, cold, cough, vomiting, diarrhoea, and other urgent symptoms.</div></article>
+            <article class="faq-item"><h3>What areas do you serve?</h3><div class="faq-answer">Families from Bavdhan, Baner, Pashan, Kothrud, Warje, and NDA Road visit our clinic regularly.</div></article>
+            <article class="faq-item"><h3>Do you offer dietary counselling?</h3><div class="faq-answer">Yes, nutrition guidance is provided for infants, toddlers, school-age children, and picky eaters.</div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="visit" id="visit">
+        <div class="wrap visit-layout">
+          <div class="visit-copy">
+            <p class="eyebrow purple">Come say hello</p>
+            <h2>We’re easy to find.</h2>
+            <p>Drop in for your child’s next check-in, vaccine, or a little reassurance. We’ll be ready with a warm welcome.</p>
+            <a class="text-link" href="https://maps.google.com/?q=110+First+floor+Business+square+opposite+DSK+Ranwara+Bavdhan+Pune+411021" target="_blank" rel="noopener">Open directions <span>↗</span></a>
+          </div>
+          <div class="details-card">
+            <div class="detail-row"><span class="detail-icon">⌖</span><p><strong>Clinic address</strong>110, First floor, Business Square,<br />opposite DSK Ranwara, Bavdhan,<br />Pune – 411021</p></div>
+            <div class="card-rule"></div>
+            <div class="detail-row"><span class="detail-icon">◷</span><p><strong>Visiting hours</strong>Monday - Saturday<br />09:00 AM - 12:00 PM<br />06:00 PM - 09:00 PM</p></div>
+            <div class="card-rule"></div>
+            <a class="phone-row" href="tel:+919175720159"><span class="detail-icon">✆</span><span><strong>Call the clinic</strong>+91 9175720159</span><b>→</b></a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <button class="side-menu-overlay" type="button" aria-label="Close section menu"></button>
+    <aside class="side-menu" id="section-menu" aria-label="Website sections" aria-hidden="true">
+      <div class="side-menu-head"><strong>Explore the clinic</strong><button class="side-menu-close" type="button" aria-label="Close section menu">×</button></div>
+      <nav>
+        <a href="#top">Home</a>
+        <a href="#paediatrician">Meet your paediatrician</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#vaccination">Vaccination guide</a>
+        <a href="#events">Clinic calendar</a>
+        <a href="#parent-resources">Parent’s library</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+        <a href="#visit">Visit the clinic</a>
+      </nav>
+      <div class="side-menu-social" aria-label="Clinic social links">
+        <p>Follow the clinic</p>
+        <div class="side-menu-social-links">
+          <a class="google-link" href="https://maps.app.goo.gl/bPfDCW8spcYtVZ9g7" target="_blank" rel="noopener" aria-label="Find the clinic on Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.31v2.77h3.57c2.09-1.93 3.27-4.77 3.27-8.09Z"/><path d="M12 23c2.97 0 5.46-.98 7.29-2.66l-3.57-2.77c-.98.66-2.24 1.06-3.72 1.06-2.87 0-5.3-1.94-6.17-4.55H2.14v2.84A11 11 0 0 0 12 23Z"/><path d="M5.83 14.08A6.6 6.6 0 0 1 5.48 12c0-.72.12-1.42.35-2.08V7.08H2.14A11 11 0 0 0 1 12c0 1.77.42 3.45 1.14 4.92l3.69-2.84Z"/><path d="M12 5.38c1.62 0 3.07.56 4.21 1.65l3.15-3.15C17.46 2.11 14.97 1 12 1a11 11 0 0 0-9.86 6.08l3.69 2.84C6.7 7.31 9.13 5.38 12 5.38Z"/></svg></a>
+          <a href="https://www.instagram.com/paediatric.clinic.bavdhan?igsi=YjQyOWpzdzVsZ3Jx" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 2h9.2A5.4 5.4 0 0 1 22 7.4v9.2a5.4 5.4 0 0 1-5.4 5.4H7.4A5.4 5.4 0 0 1 2 16.6V7.4A5.4 5.4 0 0 1 7.4 2Zm-.2 2A3.2 3.2 0 0 0 4 7.2v9.6A3.2 3.2 0 0 0 7.2 20h9.6a3.2 3.2 0 0 0 3.2-3.2V7.2A3.2 3.2 0 0 0 16.8 4H7.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg></a>
+          <a href="https://youtube.com/@paediatricclinicbavdhan?si=Jg3Fnfcq4SFekSUU" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a>
+          <a href="mailto:paediatric.clnic.bavdhan@gmail.com" aria-label="Email the clinic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.5l9 5.6 9-5.6V7H3Zm18 10V9.8l-8.5 5.3a1 1 0 0 1-1.1 0L3 9.8V17h18Z"/></svg></a>
+          <a href="https://whatsapp.com/channel/0029VbCsxTp42Dca2lqVN535" target="_blank" rel="noopener" aria-label="WhatsApp Channel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.9 9.9 0 0 0-8.48 15.01L2.2 21.8l4.9-1.28A9.9 9.9 0 1 0 12 2Zm0 2a7.9 7.9 0 0 1 6.71 12.07l-.31.5.65 2.39-2.45-.64-.48.28A7.9 7.9 0 1 1 12 4Zm-3.03 3.1c-.28 0-.6.04-.91.37-.31.33-1.19 1.16-1.19 2.83 0 1.67 1.22 3.29 1.39 3.52.17.23 2.4 3.67 5.81 5.02 2.83 1.12 3.41.9 4.03.84.62-.06 2-.82 2.28-1.62.28-.8.28-1.48.2-1.62-.08-.14-.28-.23-.58-.38-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.27-.47-2.42-1.5-.9-.81-1.5-1.8-1.67-2.1-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.65-.93-2.26-.24-.57-.49-.5-.68-.51h-.59Z"/></svg></a>
+        </div>
+      </div>
+    </aside>
+    <div class="event-popup" id="event-popup" role="dialog" aria-modal="true" aria-labelledby="event-popup-title" aria-hidden="true">
+      <div class="event-popup-card">
+        <button class="event-popup-close" type="button" aria-label="Close event popup">×</button>
+        <span class="event-popup-icon" aria-hidden="true">🎈</span>
+        <p class="event-popup-kicker">Clinic update</p>
+        <h2 id="event-popup-title"></h2>
+        <button class="event-popup-button" type="button">Click here</button>
+      </div>
+    </div>
+    <div class="doctor-popup" id="doctor-popup" role="dialog" aria-modal="true" aria-labelledby="doctor-popup-title" aria-hidden="true">
+      <article class="doctor-popup-card">
+        <button class="doctor-popup-close" type="button" aria-label="Close doctor details">×</button>
+        <p class="doctor-popup-kicker">Meet your paediatrician</p>
+        <h2 id="doctor-popup-title">Meet Dr. Archana Khujat Kalyani</h2>
+        <p>Dr. Archana Khujat Kalyani completed her undergraduate medical education at Bharati Vidyapeeth Medical College, Pune, followed by her postgraduate training at Smt. Kashibai Navale Medical College and General Hospital, Pune.</p>
+        <p>With over 10 years of experience in paediatrics, she is dedicated to providing compassionate, comprehensive, and evidence-based care for children from infancy through adolescence.</p>
+        <p>At Dr. Archana Khujat Kalyani Paediatric Clinic, the focus is on supporting every child’s healthy growth and development while helping parents feel informed, comfortable, and confident about their child’s healthcare.</p>
+        <h3>Hospital affiliations</h3>
+        <ol>
+          <li>Mai Mangeshkar Hospital, Warje</li>
+          <li>Sindhu Nursing Home, Kothrud</li>
+        </ol>
+      </article>
+    </div>
+    <div class="honey-bee" aria-hidden="true"><span>🐝</span></div>
+    <div class="photo-lightbox" aria-hidden="true" role="dialog" aria-label="Expanded clinic photo"><button type="button" class="lightbox-close" aria-label="Close expanded photo">×</button><img src="" alt="" /></div>
+    <section class="location-map" aria-label="Clinic location map"><div class="wrap"><img src="assets/pediatrician-bavdhan-map.jpg" alt="Map showing the location of Dr. Archana Khujat Kalyani Paediatric Clinic" /></div></section>
+    <nav class="mobile-quick-actions" aria-label="Quick clinic actions"><a class="quick-book" href="https://wa.me/9175720159?text=Hello%21%0A%0AI%20would%20like%20to%20book%20an%20appointment%20at%20%2ADr.%20Archana%20Khujat%20Kalyani%20Paediatric%20Clinic.%2A%0A%0APlease%20confirm%20the%20available%20appointment%20slot.%0A%0AThank%20you" target="_blank" rel="noopener">Book a consultation</a><a class="quick-find" href="#visit">Find the clinic</a></nav>
+    <footer><div class="wrap"><span>Serving families from Bavdhan, Baner and nearby areas</span><nav class="social-links" aria-label="Social and contact links"><a href="https://maps.app.goo.gl/bPfDCW8spcYtVZ9g7" target="_blank" rel="noopener">Google</a><a href="https://www.instagram.com/paediatric.clinic.bavdhan?igsi=YjQyOWpzdzVsZ3Jx" target="_blank" rel="noopener">Instagram</a><a href="https://youtube.com/@paediatricclinicbavdhan?si=Jg3Fnfcq4SFekSUU" target="_blank" rel="noopener">YouTube</a><a href="mailto:paediatric.clnic.bavdhan@gmail.com">Gmail</a><a href="https://whatsapp.com/channel/0029VbCsxTp42Dca2lqVN535" target="_blank" rel="noopener">WhatsApp</a></nav><span>© <span id="year"></span> · Bavdhan, Pune</span></div></footer>
+    <script>
+      const fixedHeader = document.querySelector('.site-header');
+      document.body.insertBefore(fixedHeader, document.body.firstChild);
+      const heroSection = document.querySelector('.hero');
+      const updateHeaderBackdrop = () => fixedHeader.classList.toggle('is-scrolled', window.scrollY > heroSection.offsetHeight - fixedHeader.offsetHeight);
+      updateHeaderBackdrop();
+      window.addEventListener('scroll', updateHeaderBackdrop, { passive: true });
+      document.querySelectorAll('.google-link').forEach((link) => {
+        link.href = 'https://maps.app.goo.gl/bPfDCW8spcYtVZ9g7';
+      });
+      document.querySelectorAll('.visit .text-link').forEach((link) => {
+        link.href = 'https://maps.app.goo.gl/bPfDCW8spcYtVZ9g7';
+      });
+      const menuToggle = document.querySelector('.menu-toggle');
+      const sideMenu = document.querySelector('.side-menu');
+      const menuOverlay = document.querySelector('.side-menu-overlay');
+      const menuClose = document.querySelector('.side-menu-close');
+      const closeSectionMenu = () => {
+        sideMenu.classList.remove('is-open');
+        menuOverlay.classList.remove('is-open');
+        sideMenu.setAttribute('aria-hidden', 'true');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      };
+      const openSectionMenu = () => {
+        sideMenu.classList.add('is-open');
+        menuOverlay.classList.add('is-open');
+        sideMenu.setAttribute('aria-hidden', 'false');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('menu-open');
+        menuClose.focus();
+      };
+      menuToggle.addEventListener('click', () => {
+        if (sideMenu.classList.contains('is-open')) closeSectionMenu();
+        else openSectionMenu();
+      });
+      menuClose.addEventListener('click', () => {
+        closeSectionMenu();
+        menuToggle.focus();
+      });
+      menuOverlay.addEventListener('click', () => {
+        closeSectionMenu();
+        menuToggle.focus();
+      });
+      sideMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeSectionMenu));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && sideMenu.classList.contains('is-open')) {
+          closeSectionMenu();
+          menuToggle.focus();
+        }
+      });
+      const pastEvents = document.getElementById('past-events');
+      const pastEventsTrigger = document.querySelector('.event-card-link.past');
+      const pastEventsClose = document.querySelector('.past-events-close');
+      const openPastEvents = (shouldScroll = true) => {
+        pastEvents.classList.add('is-open');
+        pastEvents.setAttribute('aria-hidden', 'false');
+        if (shouldScroll) requestAnimationFrame(() => pastEvents.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      };
+      pastEventsTrigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        openPastEvents();
+      });
+      pastEventsClose.addEventListener('click', (event) => {
+        event.preventDefault();
+        pastEvents.querySelectorAll('video').forEach((video) => {
+          video.pause();
+          video.currentTime = 0;
+        });
+        pastEvents.classList.remove('is-open');
+        pastEvents.setAttribute('aria-hidden', 'true');
+        document.getElementById('events').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      if (window.location.hash === '#past-events') openPastEvents(false);
+      const nextEvents = document.getElementById('next-events');
+      const nextEventsTrigger = document.querySelector('.event-card-link.planned');
+      const nextEventsClose = document.querySelector('.next-events-close');
+      const openNextEvents = (shouldScroll = true) => {
+        nextEvents.classList.add('is-open');
+        nextEvents.setAttribute('aria-hidden', 'false');
+        if (shouldScroll) requestAnimationFrame(() => nextEvents.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      };
+      nextEventsTrigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        openNextEvents();
+      });
+      nextEventsClose.addEventListener('click', (event) => {
+        event.preventDefault();
+        nextEvents.classList.remove('is-open');
+        nextEvents.setAttribute('aria-hidden', 'true');
+        document.getElementById('events').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      if (window.location.hash === '#next-events') openNextEvents(false);
+      const doctorPopup = document.querySelector('#doctor-popup');
+      const doctorPopupTrigger = document.querySelector('.know-more-link');
+      const doctorPopupClose = document.querySelector('.doctor-popup-close');
+      const closeDoctorPopup = () => {
+        doctorPopup.classList.remove('is-visible');
+        doctorPopup.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('doctor-popup-open');
+        doctorPopupTrigger.focus();
+      };
+      doctorPopupTrigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        doctorPopup.classList.add('is-visible');
+        doctorPopup.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('doctor-popup-open');
+        doctorPopupClose.focus();
+      });
+      doctorPopupClose.addEventListener('click', closeDoctorPopup);
+      doctorPopup.addEventListener('click', (event) => {
+        if (event.target === doctorPopup) closeDoctorPopup();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && doctorPopup.classList.contains('is-visible')) closeDoctorPopup();
+      });
+      // Future event link settings: also available through the Google Sheet remote configuration.
+      const futureEventLinkSettings = {
+        url: '',
+        label: 'View event details'
+      };
+      const futureEventLink = document.querySelector('#next-event-link');
+      const updateFutureEventLink = () => {
+        let eventUrl;
+        const rawEventUrl = futureEventLinkSettings.url.trim();
+        const normalizedEventUrl = /^[a-z][a-z\d+.-]*:/i.test(rawEventUrl) ? rawEventUrl : `https://${rawEventUrl}`;
+        try { eventUrl = rawEventUrl ? new URL(normalizedEventUrl) : null; } catch { eventUrl = null; }
+        if (eventUrl && ['http:', 'https:'].includes(eventUrl.protocol)) {
+          futureEventLink.href = eventUrl.href;
+          futureEventLink.textContent = futureEventLinkSettings.label.trim() || 'View event details';
+          futureEventLink.target = '_blank';
+          futureEventLink.rel = 'noopener';
+          futureEventLink.classList.remove('is-placeholder');
+          futureEventLink.removeAttribute('aria-disabled');
+        } else {
+          futureEventLink.removeAttribute('href');
+          futureEventLink.textContent = 'Coming soon..';
+          futureEventLink.removeAttribute('target');
+          futureEventLink.removeAttribute('rel');
+          futureEventLink.classList.add('is-placeholder');
+          futureEventLink.setAttribute('aria-disabled', 'true');
+        }
+      };
+      updateFutureEventLink();
+      // One-time setup: paste the deployed Google Apps Script web-app URL below.
+      // After that, edit the Google Sheet to change popup visibility, title, or frequency without redeploying this website.
+      const eventPopupRemoteConfigUrl = 'https://script.google.com/macros/s/AKfycbxxanyEeX4Gz_ecsfC3UTXGPWxzf6x7bDWwOm5cxuluDnSzlH1VhubcEE2MQfVHSxK5FA/exec';
+      const eventPopupSettings = {
+        enabled: true,
+        title: 'Children’s Health Checkup Camp 2026!',
+        intervalMinutes: 2
+      };
+      const eventPopup = document.querySelector('#event-popup');
+      const eventPopupTitle = document.querySelector('#event-popup-title');
+      const eventPopupClose = document.querySelector('.event-popup-close');
+      const eventPopupButton = document.querySelector('.event-popup-button');
+      const closeEventPopup = () => {
+        eventPopup.classList.remove('is-visible');
+        eventPopup.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('event-popup-open');
+      };
+      const showEventPopup = () => {
+        if (!eventPopupSettings.enabled || eventPopup.classList.contains('is-visible') || document.body.classList.contains('doctor-popup-open')) return;
+        eventPopup.classList.add('is-visible');
+        eventPopup.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('event-popup-open');
+      };
+      let eventPopupTimer;
+      const updateEventPopupTitle = () => { eventPopupTitle.textContent = eventPopupSettings.title; };
+      const startEventPopupSchedule = () => {
+        window.clearInterval(eventPopupTimer);
+        if (eventPopupSettings.enabled) {
+          // Do not interrupt a first-time visit; show the first popup only after the configured interval.
+          eventPopupTimer = window.setInterval(showEventPopup, eventPopupSettings.intervalMinutes * 60000);
+        }
+      };
+      const readBoolean = (value) => {
+        if (typeof value === 'boolean') return value;
+        const normalized = typeof value === 'string' || typeof value === 'number' ? String(value).trim().toLowerCase() : '';
+        if (['true', '1', 'yes', 'on'].includes(normalized)) return true;
+        if (['false', '0', 'no', 'off'].includes(normalized)) return false;
+        return null;
+      };
+      // Greetings are controlled only through the Google Sheet, for a single day or a date range.
+      // Use MM-DD values (for example, 01-26 to 01-28). The end date must be the same as or later than the start date.
+      const occasionSettings = { enabled: true, startDate: '', endDate: '', title: '', message: '' };
+      const occasionGreeting = document.querySelector('#occasion-greeting');
+      const getIndiaOccasionDate = () => {
+        const previewDate = new URLSearchParams(window.location.search).get('occasionPreview');
+        if (/^\d{2}-\d{2}$/.test(previewDate || '')) return previewDate;
+        const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', month: '2-digit', day: '2-digit' }).formatToParts();
+        const part = (type) => parts.find((item) => item.type === type).value;
+        return `${part('month')}-${part('day')}`;
+      };
+      const isValidOccasionDate = (value) => {
+        if (!/^\d{2}-\d{2}$/.test(value)) return false;
+        const [month, day] = value.split('-').map(Number);
+        return month >= 1 && month <= 12 && day >= 1 && day <= [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1];
+      };
+      // Google Sheets dates arrive from Apps Script as ISO timestamps. Convert them to the clinic's India time zone.
+      const normalizeOccasionDate = (value) => {
+        const raw = typeof value === 'string' ? value.trim() : '';
+        if (isValidOccasionDate(raw)) return raw;
+        if (!/^\d{4}-\d{2}-\d{2}(?:T|$)/.test(raw)) return '';
+        const parsed = new Date(raw);
+        if (Number.isNaN(parsed.getTime())) return '';
+        const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', month: '2-digit', day: '2-digit' }).formatToParts(parsed);
+        const part = (type) => parts.find((item) => item.type === type).value;
+        return `${part('month')}-${part('day')}`;
+      };
+      const isOccasionDateInRange = (date, startDate, endDate) => {
+        if (!isValidOccasionDate(startDate)) return false;
+        const end = isValidOccasionDate(endDate) ? endDate : startDate;
+        return startDate <= end && date >= startDate && date <= end;
+      };
+      const updateOccasionGreeting = () => {
+        const today = getIndiaOccasionDate();
+        let greeting;
+        if (isOccasionDateInRange(today, occasionSettings.startDate.trim(), occasionSettings.endDate.trim()) && occasionSettings.title.trim()) {
+          greeting = { title: occasionSettings.title.trim(), message: occasionSettings.message.trim() };
+        }
+        if (!occasionSettings.enabled || !greeting) {
+          occasionGreeting.hidden = true;
+          return;
+        }
+        occasionGreeting.querySelector('strong').textContent = greeting.title;
+        occasionGreeting.querySelector('.occasion-message').textContent = greeting.message;
+        occasionGreeting.hidden = false;
+      };
+      const applyRemotePopupConfig = (config) => {
+        if (!config || typeof config !== 'object' || Array.isArray(config)) {
+          startEventPopupSchedule();
+          return;
+        }
+        const enabled = config.popupEnabled ?? config.enabled;
+        const title = config.popupTitle ?? config.title;
+        const interval = Number(config.popupIntervalMinutes ?? config.intervalMinutes);
+        const nextEventLink = config.nextEventLink ?? config.nextClinicEventLink ?? config.futureEventLink;
+        const nextEventLinkLabel = config.nextEventLinkLabel ?? config.nextClinicEventLinkLabel ?? config.futureEventLinkLabel;
+        const occasionEnabled = config.occasionEnabled;
+        // `occasionDate` remains supported for existing Sheets. Prefer occasionStartDate and occasionEndDate for a greeting period.
+        const occasionStartDate = config.occasionStartDate ?? config.occasionDate;
+        const occasionEndDate = config.occasionEndDate;
+        const occasionTitle = config.occasionTitle;
+        const occasionMessage = config.occasionMessage;
+        const popupEnabled = readBoolean(enabled);
+        const greetingEnabled = readBoolean(occasionEnabled);
+        const normalizedStartDate = normalizeOccasionDate(occasionStartDate);
+        const normalizedEndDate = normalizeOccasionDate(occasionEndDate);
+        if (popupEnabled !== null) eventPopupSettings.enabled = popupEnabled;
+        if (typeof title === 'string' && title.trim()) eventPopupSettings.title = title.trim();
+        if (Number.isFinite(interval) && interval >= 1) eventPopupSettings.intervalMinutes = interval;
+        if (typeof nextEventLink === 'string' && nextEventLink.trim()) futureEventLinkSettings.url = nextEventLink.trim();
+        if (typeof nextEventLinkLabel === 'string' && nextEventLinkLabel.trim()) futureEventLinkSettings.label = nextEventLinkLabel.trim();
+        if (greetingEnabled !== null) occasionSettings.enabled = greetingEnabled;
+        if (normalizedStartDate) occasionSettings.startDate = normalizedStartDate;
+        if (normalizedEndDate) occasionSettings.endDate = normalizedEndDate;
+        if (typeof occasionTitle === 'string' && occasionTitle.trim()) occasionSettings.title = occasionTitle.trim();
+        if (typeof occasionMessage === 'string' && occasionMessage.trim()) occasionSettings.message = occasionMessage.trim();
+        updateFutureEventLink();
+        updateOccasionGreeting();
+        updateEventPopupTitle();
+        startEventPopupSchedule();
+      };
+      updateOccasionGreeting();
+      updateEventPopupTitle();
+      if (eventPopupRemoteConfigUrl.trim()) {
+        fetch(eventPopupRemoteConfigUrl.trim(), { cache: 'no-store' })
+          .then((response) => {
+            if (!response.ok) throw new Error('Could not load popup configuration');
+            return response.json();
+          })
+          .then(applyRemotePopupConfig)
+          .catch(() => startEventPopupSchedule());
+      } else {
+        startEventPopupSchedule();
+      }
+      eventPopupClose.addEventListener('click', closeEventPopup);
+      eventPopup.addEventListener('click', (event) => {
+        if (event.target === eventPopup) closeEventPopup();
+      });
+      eventPopupButton.addEventListener('click', () => {
+        closeEventPopup();
+        openNextEvents();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && eventPopup.classList.contains('is-visible')) closeEventPopup();
+      });
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const bee = document.querySelector('.honey-bee');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (bee && !reduceMotion) {
+        const roam = () => {
+          const x = Math.round(8 + Math.random() * 84);
+          const y = Math.round(10 + Math.random() * 78);
+          const tilt = Math.round(-18 + Math.random() * 36);
+          bee.style.setProperty('--bee-x', `${x}vw`);
+          bee.style.setProperty('--bee-y', `${y}vh`);
+          bee.style.setProperty('--bee-tilt', `${tilt}deg`);
+          window.setTimeout(roam, 2400 + Math.round(Math.random() * 2200));
+        };
+        window.setTimeout(roam, 900);
+      }
+      document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+        const slides = [...carousel.querySelectorAll('.gallery-slide')];
+        const previous = carousel.querySelector('.gallery-prev');
+        const next = carousel.querySelector('.gallery-next');
+        const count = carousel.querySelector('.gallery-counter span');
+        const total = carousel.querySelector('.gallery-total');
+        let current = 0;
+        let timer;
+        const show = (index) => {
+          current = (index + slides.length) % slides.length;
+          slides.forEach((slide, slideIndex) => {
+            const forward = (slideIndex - current + slides.length) % slides.length;
+            const distance = forward > slides.length / 2 ? forward - slides.length : forward;
+            slide.className = 'gallery-slide';
+            if (distance === 0) slide.classList.add('is-center');
+            if (distance === -1) slide.classList.add('is-left');
+            if (distance === 1) slide.classList.add('is-right');
+            if (distance === -2) slide.classList.add('is-outer-left');
+            if (distance === 2) slide.classList.add('is-outer-right');
+            slide.setAttribute('aria-hidden', String(distance !== 0));
+          });
+          count.textContent = current + 1;
+        };
+        slides.forEach((slide, index) => {
+          slide.querySelector('figcaption').textContent = `Clinic moment ${index + 1} of ${slides.length}`;
+        });
+        total.textContent = slides.length;
+        const restart = () => {
+          window.clearInterval(timer);
+          timer = window.setInterval(() => show(current + 1), 2000);
+        };
+        previous.addEventListener('click', () => { show(current - 1); restart(); });
+        next.addEventListener('click', () => { show(current + 1); restart(); });
+        carousel.addEventListener('mouseenter', () => window.clearInterval(timer));
+        carousel.addEventListener('mouseleave', restart);
+        show(0);
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) restart();
+      });
+      document.querySelectorAll('[data-testimonials-carousel]').forEach((carousel) => {
+        const track = carousel.querySelector('.testimonials-track');
+        const cards = [...track.querySelectorAll('.testimonial-card')];
+        const previous = carousel.querySelector('.testimonial-prev');
+        const next = carousel.querySelector('.testimonial-next');
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let index = 0;
+        let timer;
+        const visibleCards = () => window.matchMedia('(max-width: 760px)').matches ? 1 : 3;
+        const show = (nextIndex) => {
+          const maximum = Math.max(0, cards.length - visibleCards());
+          index = maximum ? (nextIndex + maximum + 1) % (maximum + 1) : 0;
+          track.scrollTo({ left: cards[index].offsetLeft - track.offsetLeft, behavior: reducedMotion ? 'auto' : 'smooth' });
+        };
+        const restart = () => {
+          window.clearInterval(timer);
+          if (!reducedMotion) timer = window.setInterval(() => show(index + 1), 6500);
+        };
+        previous.addEventListener('click', () => { show(index - 1); restart(); });
+        next.addEventListener('click', () => { show(index + 1); restart(); });
+        track.addEventListener('mouseenter', () => window.clearInterval(timer));
+        track.addEventListener('mouseleave', restart);
+        track.addEventListener('focusin', () => window.clearInterval(timer));
+        track.addEventListener('focusout', restart);
+        window.addEventListener('resize', () => show(index), { passive: true });
+        restart();
+      });
+      const lightbox = document.querySelector('.photo-lightbox');
+      const lightboxImage = lightbox?.querySelector('img');
+      const closeLightbox = () => {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+      };
+      document.querySelectorAll('.gallery-slide img').forEach((image) => {
+        image.addEventListener('dblclick', () => {
+          lightboxImage.src = image.currentSrc || image.src;
+          lightboxImage.alt = image.alt;
+          lightbox.classList.add('is-open');
+          lightbox.setAttribute('aria-hidden', 'false');
+        });
+      });
+      lightbox?.addEventListener('click', (event) => {
+        if (event.target === lightbox || event.target.closest('.lightbox-close')) closeLightbox();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && lightbox?.classList.contains('is-open')) closeLightbox();
+      });
+    </script>
+  </body>
+</html>

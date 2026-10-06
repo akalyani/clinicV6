@@ -1,0 +1,17 @@
+/* Colour balance: 60% clinic purple, 30% soft lilac/neutral surfaces, 10% sunshine accents. */
+:root {
+  --clinic-primary: #6554cf;
+  --clinic-primary-deep: #30295b;
+  --clinic-secondary: #eeebff;
+  --clinic-neutral: #fffdf8;
+  --clinic-accent: #ffd45c;
+  --clinic-accent-coral: #ff876e;
+}
+
+body { background: var(--clinic-neutral); }
+.hero { background: linear-gradient(141deg, #7563d7 0%, var(--clinic-primary) 56%, #5f4bc5 100%); }
+.visit { background: var(--clinic-secondary); }
+.button-primary { background: var(--clinic-accent); }
+.balloon { background: var(--clinic-accent-coral); }
+.balloon:after { border-top-color: var(--clinic-accent-coral); }
+footer { background: var(--clinic-primary-deep); }
